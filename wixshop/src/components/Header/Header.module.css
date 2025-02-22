@@ -1,7 +1,7 @@
 .menu {
   position: fixed;
-  right: 15px;
-  top: 28px;
+  right: 30px;
+  top: 30px;
 }
 
 .burgerCheckbox {
@@ -50,26 +50,26 @@
   transform: rotate(-45deg);
   transition: bottom 0.3s, transform 0.3s 0.15s;
 }
-.menuList {
-  top: 0;
-  left: 0;
+.overlay {
+  top: -30px;
+  left: 70px;
   position: absolute;
-  display: grid;
-  gap: 12px;
-  padding: 42px 0;
-  margin: 0;
-  background: orange;
-  list-style-type: none;
-  transform: translateX(-100%);
+  background: white;
+  padding-top: 80px;
+  padding-right: 30px;
   transition: 0.3s;
-  width: 200px;
+  width: 250px;
+  height: 100vh;
+}
+.open {
+  transform: translateX(-100%);
 }
 .menuItem {
   display: block;
   padding: 8px;
-  color: white;
+  color: black;
   font-size: 18px;
-  text-align: center;
+  text-align: right;
   text-decoration: none;
 }
 .menu-item:hover {
@@ -77,4 +77,12 @@
 }
 .burgerCheckbox:checked ~ .menu-list {
   transform: translateX(0);
+}
+.wrap {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000080;
 }

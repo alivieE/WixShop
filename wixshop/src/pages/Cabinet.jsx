@@ -3,7 +3,7 @@ import Header from '../components/Header/Header'
 
 const Cabinet = () => {
   return (
-    <div>
+    <div c>
         <Header></Header>
     </div>
   )
