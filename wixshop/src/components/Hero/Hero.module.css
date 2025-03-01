@@ -26,3 +26,17 @@
   background-size: cover;
   background-position: center;
 }
+
+.heroWrap {
+  background-color: rgba(165, 32, 32, 0.8);
+  width: 280px;
+  height: 333px;
+  padding: 15px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.hero {
+  position: relative;
+}

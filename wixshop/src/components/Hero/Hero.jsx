@@ -29,6 +29,17 @@ const Hero = () => {
           <div className={s.bg4}></div>
         </SwiperSlide>
       </Swiper>
+      <div className={s.heroWrap}>
+        <div>
+          <p>GOOD to EAT</p>
+        </div>
+        <div>
+          <img src={images.pig} />
+        </div>
+        <div>
+          <dutton></dutton>
+        </div>
+      </div>
     </div>
   );
 };
