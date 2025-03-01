@@ -86,3 +86,10 @@
   left: 0;
   background-color: #00000080;
 }
+.bag {
+  width: 29px;
+  height: 35px;
+}
+.header {
+  padding: 30px;
+}

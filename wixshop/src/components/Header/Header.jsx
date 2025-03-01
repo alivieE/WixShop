@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import s from './Header.module.css';
-
+import images from '../../assets/index';
 const Header = () => {
   const [isOpenMenu, setisOpenMenu] = useState(false);
   return (
-    <div>
+    <header className={s.header}>
+      <div>
+        <img className={s.bag} src={images.bag} alt="bag" />
+        <p>12</p>
+      </div>
+
       <div className={s.menu}>
         <input
           onClick={() => {
@@ -41,7 +46,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
