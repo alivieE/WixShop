@@ -93,3 +93,12 @@
 .header {
   padding: 30px;
 }
+
+.text {
+  font-weight: normal;
+  font-size: 17px;
+  position: absolute;
+  color: white;
+  left: 37px;
+  top: 45px;
+}

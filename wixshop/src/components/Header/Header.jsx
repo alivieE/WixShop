@@ -5,9 +5,9 @@ const Header = () => {
   const [isOpenMenu, setisOpenMenu] = useState(false);
   return (
     <header className={s.header}>
-      <div>
+      <div className={s.bagAndCount}>
         <img className={s.bag} src={images.bag} alt="bag" />
-        <p>12</p>
+        <p className={s.text}>12</p>
       </div>
 
       <div className={s.menu}>
