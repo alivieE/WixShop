@@ -30,14 +30,19 @@ const Hero = () => {
         </SwiperSlide>
       </Swiper>
       <div className={s.heroWrap}>
-        <div>
-          <p>GOOD to EAT</p>
+        <div className={s.borderFull}>
+          <h1 className={s.logoText}>
+            GOOD <span className={s.span}>to</span> EAT
+          </h1>
         </div>
         <div>
+          <p className={s.description}>Savouries ans sweets fot the gourmet in all of us</p>
           <img src={images.pig} />
         </div>
-        <div>
-          <dutton></dutton>
+        <div className={s.bTN}>
+          <dutton className={s.button}>
+            <p>START SHOPPING</p>
+          </dutton>
         </div>
       </div>
     </div>
