@@ -1,0 +1,28 @@
+.bg1 {
+  width: 100%;
+  height: 500px;
+  background-image: url('../../assets/heroBg1.webp');
+  background-size: cover;
+  background-position: center;
+}
+.bg2 {
+  width: 100%;
+  height: 500px;
+  background-image: url('../../assets/heroBg2.webp');
+  background-size: cover;
+  background-position: center;
+}
+.bg3 {
+  width: 100%;
+  height: 500px;
+  background-image: url('../../assets/heroBg3.webp');
+  background-size: cover;
+  background-position: center;
+}
+.bg4 {
+  width: 100%;
+  height: 500px;
+  background-image: url('../../assets/heroBg4.webp');
+  background-size: cover;
+  background-position: center;
+}

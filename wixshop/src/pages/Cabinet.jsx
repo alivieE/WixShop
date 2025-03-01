@@ -1,12 +1,14 @@
-import React from 'react'
-import Header from '../components/Header/Header'
+import React from 'react';
+import Header from '../components/Header/Header';
+import Hero from '../components/Hero/Hero';
 
 const Cabinet = () => {
   return (
-    <div c>
-        <Header></Header>
+    <div>
+      <Header></Header>
+      <Hero></Hero>
     </div>
-  )
-}
+  );
+};
 
-export default Cabinet
+export default Cabinet;
