@@ -35,14 +35,14 @@ const Hero = () => {
             GOOD <span className={s.span}>to</span> EAT
           </h1>
         </div>
-        <div>
+        <div className={s.info}>
           <p className={s.description}>Savouries ans sweets fot the gourmet in all of us</p>
-          <img src={images.pig} />
+          <img src={images.pig} className={s.pig} />
         </div>
         <div className={s.bTN}>
-          <dutton className={s.button}>
-            <p>START SHOPPING</p>
-          </dutton>
+          <button className={s.button}>
+            <p>START SHOPPING &#x2764;</p>
+          </button>
         </div>
       </div>
     </div>
