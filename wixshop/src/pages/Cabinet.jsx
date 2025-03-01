@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import images from '../assets/index';
-import s from './Cabinet.css';
+import s from './Cabinet.module.css';
 
 const Cabinet = () => {
   return (
