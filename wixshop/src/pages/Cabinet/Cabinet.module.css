@@ -1,4 +1,4 @@
-.lii {
+.boxWrap {
   border: 1px solid black;
   width: 238px;
   display: flex;
@@ -7,7 +7,7 @@
   padding-bottom: 45px;
 }
 
-.uul {
+.box {
   display: flex;
   flex-direction: column;
   align-items: center;
