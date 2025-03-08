@@ -1,0 +1,52 @@
+.aboutUs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 22px;
+  padding: 20px;
+}
+
+.GoogtoEat {
+  justify-content: center;
+}
+
+.About {
+  padding: 0 20px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.descriptionWrap {
+  font-size: 17px;
+  text-align: center;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid rgb(51 51 51);
+  padding: 35px;
+  width: 100%;
+  font-size: 23px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.buttons {
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}

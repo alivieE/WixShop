@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding-top: 97px;
 }
 
 .App-logo {
@@ -22,6 +23,15 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.bottomTextWrap {
+  max-width: 238px;
+  margin: 0 auto;
+  color: rgb(119, 119, 119);
+  font-size: 13px;
+  padding: 20px;
+  padding-bottom: 60px;
 }
 
 .App-link {

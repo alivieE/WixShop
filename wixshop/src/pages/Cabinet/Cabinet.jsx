@@ -32,13 +32,7 @@ const Cabinet = () => {
             <p>$8.99</p>
           </li>
         </ul>
-        <div className={s.bottomText}>
-          <p className={s.bottomTextWrap}>
-            © 2035 by GOOD TO EAT. Powered and secured by{" "}
-          </p>
-        </div>
       </section>
-      <GoogtoEat ></GoogtoEat>
     </div>
   );
 };

@@ -13,6 +13,9 @@ function App() {
           <Route path="/" element={<Cabinet />} />
           <Route path="/about" element={<About />} />
         </Routes>
+        <p className="bottomTextWrap">
+          © 2035 by GOOD TO EAT. Powered and secured by{" "}
+        </p>
       </div>
     </BrowserRouter>
   );
