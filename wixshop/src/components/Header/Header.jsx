@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import s from './Header.module.css';
-import images from '../../assets/index';
+import React, { useState } from "react";
+import s from "./Header.module.css";
+import images from "../../assets/index";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [isOpenMenu, setisOpenMenu] = useState(false);
   return (
@@ -21,29 +22,17 @@ const Header = () => {
         />
         <label for="burgerCheckbox" class={s.burger}></label>
         {isOpenMenu && <div className={s.wrap}></div>}
-        <div className={`${s.overlay} ${isOpenMenu ? s.open : ''}`}>
-          <ul className={s.menuList}>
-            <li>
-              <a href="#" class={s.menuItem}>
-                Главная
-              </a>
-            </li>
-            <li>
-              <a href="#" class={s.menuItem}>
-                О нас
-              </a>
-            </li>
-            <li>
-              <a href="#" class={s.menuItem}>
-                Команда
-              </a>
-            </li>
-            <li>
-              <a href="#" class={s.menuItem}>
-                Контакты
-              </a>
-            </li>
-          </ul>
+        <div className={`${s.overlay} ${isOpenMenu ? s.open : ""}`}>
+          <nav>
+            <ul className={s.menuList}>
+              <li class={s.menuItem}>
+                <Link to="/">Головна</Link>
+              </li>
+              <li class={s.menuItem}>
+                <Link to="/about">Про нас</Link>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>

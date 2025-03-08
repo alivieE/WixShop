@@ -1,13 +1,12 @@
-import React from 'react';
-import Header from '../components/Header/Header';
-import Hero from '../components/Hero/Hero';
-import images from '../assets/index';
-import s from './Cabinet.module.css';
+import React from "react";
+
+import Hero from "../../components/Hero/Hero";
+import images from "../../assets/index";
+import s from "./Cabinet.module.css";
 
 const Cabinet = () => {
   return (
     <div>
-      <Header></Header>
       <Hero></Hero>
       <section>
         <p className={s.elementStyle}>Enjoy Our Special Recommendations</p>
@@ -32,7 +31,9 @@ const Cabinet = () => {
           </li>
         </ul>
         <div className={s.bottomText}>
-          <p className={s.bottomTextWrap}>© 2035 by GOOD TO EAT. Powered and secured by </p>
+          <p className={s.bottomTextWrap}>
+            © 2035 by GOOD TO EAT. Powered and secured by{" "}
+          </p>
         </div>
       </section>
     </div>

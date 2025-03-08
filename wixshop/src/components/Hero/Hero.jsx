@@ -1,12 +1,12 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import images from '../../assets/index';
-import s from './Hero.module.css';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import images from "../../assets/index";
+import s from "./Hero.module.css";
 const Hero = () => {
   return (
-    <div className={s.hero}>
+    <div style={{ "z-index": "-1" }} className={s.hero}>
       <Swiper
         modules={[Navigation, Autoplay]}
         // onSlideChange={() => console.log('slide change')}
@@ -36,7 +36,9 @@ const Hero = () => {
           </h1>
         </div>
         <div className={s.info}>
-          <p className={s.description}>Savouries ans sweets fot the gourmet in all of us</p>
+          <p className={s.description}>
+            Savouries ans sweets fot the gourmet in all of us
+          </p>
           <img src={images.pig} className={s.pig} />
         </div>
         <div className={s.bTN}>

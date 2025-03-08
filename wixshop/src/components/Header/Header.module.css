@@ -10,7 +10,7 @@
 }
 .burger {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   cursor: pointer;
   display: block;
   position: relative;
@@ -21,7 +21,7 @@
 }
 .burger::before,
 .burger::after {
-  content: '';
+  content: "";
   left: 0;
   position: absolute;
   display: block;
@@ -60,6 +60,7 @@
   transition: 0.3s;
   width: 250px;
   height: 100vh;
+  z-index: 1;
 }
 .open {
   transform: translateX(-100%);
