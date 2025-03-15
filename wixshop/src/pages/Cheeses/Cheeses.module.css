@@ -23,15 +23,15 @@
 .buttonMinus {
   background: none;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 7px;
+  left: 5px;
 }
 
 .buttonPlus {
   background: none;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 7px;
+  right: 5px;
 }
 
 .inputBox {
@@ -41,7 +41,6 @@
 .input {
   display: block;
   border: none;
-
   font-size: 14px;
   font-weight: normal;
   font-style: normal;

@@ -1,9 +1,20 @@
-import React from "react";
+import { React, useState } from "react";
 import s from "./Cheeses.module.css";
 import GoogtoEat from "../../components/GoodtoEat/GoogtoEat";
 import images from "../../assets/index";
 
 const Cheeses = () => {
+  const [count, setcount] = useState(1);
+
+  function handleCountChange(event) {
+    setcount(Number(event.target.value));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const count = setcount;
+  }
+
   return (
     <div className={s.Cheeses}>
       <GoogtoEat text={"SHOP WITH US"}></GoogtoEat>
@@ -35,8 +46,13 @@ const Cheeses = () => {
                 ></path>
               </svg>
             </button>
-            <input type="number" className={s.input} />
-            <button className={s.buttonPlus}>
+            <input
+              type="number"
+              className={s.input}
+              value={count}
+              onChange={handleCountChange}
+            />
+            <button className={s.buttonPlus} onClick={handleSubmit}>
               <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
