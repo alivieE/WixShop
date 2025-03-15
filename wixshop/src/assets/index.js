@@ -7,5 +7,7 @@ import pig from './pig.avif'
 import cheess from './cheess.webp'
 import bacon from './bacon.png'
 import oliva from './oliva.png'
+import cheeseONE from './cheeseONE.avif'
+import plus  from './plus.svg'
 
-export default { bag, bg1, bg2, bg3, bg4, pig, cheess, bacon, oliva};
+export default { bag, bg1, bg2, bg3, bg4, pig, cheess, bacon, oliva, cheeseONE, plus};

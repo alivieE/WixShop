@@ -19,17 +19,36 @@ const Header = () => {
           type="checkbox"
           id="burgerCheckbox"
           class={s.burgerCheckbox}
+          checked={isOpenMenu}
         />
         <label for="burgerCheckbox" class={s.burger}></label>
         {isOpenMenu && <div className={s.wrap}></div>}
         <div className={`${s.overlay} ${isOpenMenu ? s.open : ""}`}>
           <nav>
             <ul className={s.menuList}>
-              <li class={s.menuItem}>
-                <Link to="/">Головна</Link>
+              <li
+                class={s.menuItem}
+                onClick={() => {
+                  setisOpenMenu(!isOpenMenu);
+                }}
+              >
+                <Link to="/">Home</Link>
               </li>
-              <li class={s.menuItem}>
-                <Link to="/about">Про нас</Link>
+              <li
+                class={s.menuItem}
+                onClick={() => {
+                  setisOpenMenu(!isOpenMenu);
+                }}
+              >
+                <Link to="/about">About</Link>
+              </li>
+              <li
+                class={s.menuItem}
+                onClick={() => {
+                  setisOpenMenu(!isOpenMenu);
+                }}
+              >
+                <Link to="/cheeses">Cheeses</Link>
               </li>
             </ul>
           </nav>

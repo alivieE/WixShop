@@ -6,12 +6,8 @@ import images from "../../assets/index";
 const About = () => {
   return (
     <div className={s.About}>
-      <GoogtoEat className={s.GoogtoEat}></GoogtoEat>
-      <div className={s.aboutUs}>
-        <p>-</p>
-        <p>ABOUT US</p>
-        <p>-</p>
-      </div>
+      <GoogtoEat className={s.GoogtoEat} text={"ABOUT US"}></GoogtoEat>
+
       <img className={s.img} src={images.bg2} />
       <div className={s.description}>
         <p className={s.descriptionWrap}>

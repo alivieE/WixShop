@@ -20,7 +20,7 @@ const Cabinet = () => {
             <p>$6.99</p>
           </li>
           <li className={s.boxWrap}>
-            <img src={images.boxWrap} />
+            <img src={images.bacon} />
             <p>smoked virgina bacon</p>
             <div>&mdash;</div>
             <p>$12.99</p>
