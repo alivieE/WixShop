@@ -17,7 +17,7 @@ const Cheeses = () => {
       </div>
       <ul>
         <li>
-          <img src={images.cheeseONE} />
+          <img className={s.productImg} src={images.cheeseONE} />
           <p>I`m a Product</p>
           <p>$8.99</p>
           <div className={s.inputBox}>
