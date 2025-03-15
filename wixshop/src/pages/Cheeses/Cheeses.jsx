@@ -20,8 +20,23 @@ const Cheeses = () => {
           <img src={images.cheeseONE} />
           <p>I`m a Product</p>
           <p>$8.99</p>
-          <div>
-            <button>
+          <div className={s.inputBox}>
+            <button className={s.buttonMinus}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="24"
+                height="24"
+                class="sVHsHKp"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M20,12 L20,13 L5,13 L5,12 L20,12 Z"
+                ></path>
+              </svg>
+            </button>
+            <input type="number" className={s.input} />
+            <button className={s.buttonPlus}>
               <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -35,8 +50,6 @@ const Cheeses = () => {
                 ></path>
               </svg>
             </button>
-            <input type="number" />
-            <button></button>
           </div>
         </li>
       </ul>

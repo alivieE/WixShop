@@ -19,3 +19,32 @@
   gap: 20px;
   padding: 20px;
 }
+
+.buttonMinus {
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.buttonPlus {
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.inputBox {
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid black;
+  position: relative;
+}
+
+.input {
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+}
