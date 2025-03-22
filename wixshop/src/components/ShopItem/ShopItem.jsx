@@ -19,10 +19,27 @@ const ShopItem = ({ id }) => {
   return (
     <li>
       <form action="submit">
-        <img className={s.productImg} src={images[currentProduct.id]} />
+        <div className={s.wrapImg}>
+          {currentProduct.saleAmount > 0 && <p className={s.notify}>SALE</p>}
+          {currentProduct.isNew > 0 && <p className={s.notify}>NEW</p>}
+          <img className={s.productImg} src={images[currentProduct.id]} />
+        </div>
         <div className={s.productNamePrice}>
           <p>{currentProduct.name}</p>
-          <p>${currentProduct.price}</p>
+          {currentProduct.saleAmount === 0 ? (
+            <p>${currentProduct.price}</p>
+          ) : (
+            <div className={s.priceWrap}>
+              <p className={s.lineThrough}>${currentProduct.price}</p>
+              <p className={s.newPrice}>
+                $
+                {(
+                  currentProduct.price -
+                  (currentProduct.price * currentProduct.saleAmount) / 100
+                ).toFixed(2)}
+              </p>
+            </div>
+          )}
         </div>
         <div className={s.inputBox}>
           <button
