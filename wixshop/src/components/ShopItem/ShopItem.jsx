@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import s from "./ShopItem.module.css";
 import images from "../../assets/index";
-const ShopItem = () => {
+import productsData from "../../data/products";
+const ShopItem = ({ id }) => {
   const [count, setCount] = useState(1);
 
   function handleCountChange(event) {
@@ -11,14 +12,17 @@ const ShopItem = () => {
   function handleSubmit(e) {
     e.preventDefault();
   }
-
+  const currentProduct = productsData.find((product) => {
+    return product.id === id;
+  });
+  console.log(currentProduct);
   return (
     <li>
       <form action="submit">
-        <img className={s.productImg} src={images.cheeseONE} />
+        <img className={s.productImg} src={images[currentProduct.id]} />
         <div className={s.productNamePrice}>
-          <p>I`m a Product</p>
-          <p>$8.99</p>
+          <p>{currentProduct.name}</p>
+          <p>${currentProduct.price}</p>
         </div>
         <div className={s.inputBox}>
           <button

@@ -17,7 +17,8 @@ const Cheeses = () => {
         </p>
       </div>
       <ul>
-        <ShopItem />
+        <ShopItem id={"cheddar"} />
+        <ShopItem id={"parmesan"} />
       </ul>
     </div>
   );
