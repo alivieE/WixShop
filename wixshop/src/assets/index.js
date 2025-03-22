@@ -5,8 +5,10 @@ import bg3 from "./heroBg3.webp";
 import bg4 from "./heroBg4.webp";
 import pig from "./pig.avif";
 import cheess from "./cheess.webp";
-import bacon from "./bacon.png";
-import olives from "./olives.png";
+import baconHome from "./baconHome.png";
+import bacon from './bacon.avif'
+import olives from "./olives.avif";
+import olivesHome from "./olivesHome.png";
 import cheddar from "./cheddar.avif";
 import plus from "./plus.svg";
 import parmesan from "./parmesan.avif";
@@ -15,6 +17,8 @@ import danablu from './Danablu.avif'
 import bovarSausages from './bovarSausages.avif'
 import salyami from './Salyami.avif'
 import bujenina from './Bujenina.avif'
+import macarons from './Macarons.avif'
+import cakes from './cakes.avif'
 
 export default {
   bag,
@@ -25,7 +29,9 @@ export default {
   pig,
   cheess,
   bacon,
+  baconHome,
   olives,
+  olivesHome,
   cheddar,
   plus,
   parmesan,
@@ -34,4 +40,6 @@ export default {
   bovarSausages,
   salyami,
   bujenina,
+  macarons,
+  cakes,
 };

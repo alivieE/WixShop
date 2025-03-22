@@ -20,13 +20,13 @@ const Cabinet = () => {
             <p>$6.99</p>
           </li>
           <li className={s.boxWrap}>
-            <img src={images.bacon} />
+            <img src={images.baconHome} />
             <p>SMOKED VIRGINA BACON</p>
             <div>&mdash;</div>
             <p>$12.99</p>
           </li>
           <li className={s.boxWrap}>
-            <img src={images.olives} />
+            <img src={images.olivesHome} />
             <p>GREEK KALAMATA OLIVES</p>
             <div>&mdash;</div>
             <p>$8.99</p>
