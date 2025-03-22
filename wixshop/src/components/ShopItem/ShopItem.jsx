@@ -24,6 +24,9 @@ const ShopItem = () => {
           <button
             type="button"
             onClick={() => {
+              if (count - 1 === 0) {
+                return;
+              }
               setCount(count - 1);
             }}
             className={s.buttonMinus}
@@ -48,7 +51,6 @@ const ShopItem = () => {
             onChange={handleCountChange}
             min={"1"}
             max={"10"}
-            placeholder="0"
           />
           <button
             type="button"
