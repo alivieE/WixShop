@@ -21,12 +21,12 @@ const Cabinet = () => {
           </li>
           <li className={s.boxWrap}>
             <img src={images.bacon} />
-            <p>smoked virgina bacon</p>
+            <p>SMOKED VIRGINA BACON</p>
             <div>&mdash;</div>
             <p>$12.99</p>
           </li>
           <li className={s.boxWrap}>
-            <img src={images.oliva} />
+            <img src={images.olives} />
             <p>GREEK KALAMATA OLIVES</p>
             <div>&mdash;</div>
             <p>$8.99</p>

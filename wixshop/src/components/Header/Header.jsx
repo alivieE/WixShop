@@ -50,6 +50,22 @@ const Header = () => {
               >
                 <Link to="/cheeses">Cheeses</Link>
               </li>
+              <li
+                class={s.menuItem}
+                onClick={() => {
+                  setisOpenMenu(!isOpenMenu);
+                }}
+              >
+                <Link to="/meats">Meats</Link>
+              </li>
+              <li
+                class={s.menuItem}
+                onClick={() => {
+                  setisOpenMenu(!isOpenMenu);
+                }}
+              >
+                <Link to="/provision">Provision</Link>
+              </li>
             </ul>
           </nav>
         </div>
