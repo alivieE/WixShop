@@ -10,6 +10,8 @@ import oliva from "./oliva.png";
 import cheddar from "./cheddar.avif";
 import plus from "./plus.svg";
 import parmesan from "./parmesan.avif";
+import ricotta from './Ricotta.avif'
+import danablu from './Danablu.avif'
 
 export default {
   bag,
@@ -24,4 +26,6 @@ export default {
   cheddar,
   plus,
   parmesan,
+  ricotta,
+  danablu,
 };

@@ -19,6 +19,8 @@ const Cheeses = () => {
       <ul>
         <ShopItem id={"cheddar"} />
         <ShopItem id={"parmesan"} />
+        <ShopItem id={"ricotta"} />
+        <ShopItem id={"danablu"} />
       </ul>
     </div>
   );
