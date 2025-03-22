@@ -11,12 +11,15 @@ const ShopItem = () => {
   function handleSubmit(e) {
     e.preventDefault();
   }
+
   return (
     <li>
       <form action="submit">
         <img className={s.productImg} src={images.cheeseONE} />
-        <p>I`m a Product</p>
-        <p>$8.99</p>
+        <div className={s.productNamePrice}>
+          <p>I`m a Product</p>
+          <p>$8.99</p>
+        </div>
         <div className={s.inputBox}>
           <button
             type="button"
@@ -43,8 +46,17 @@ const ShopItem = () => {
             className={s.input}
             value={count}
             onChange={handleCountChange}
+            min={"1"}
+            max={"10"}
+            placeholder="0"
           />
-          <button type="button" className={s.buttonPlus} onClick={handleSubmit}>
+          <button
+            type="button"
+            className={s.buttonPlus}
+            onClick={() => {
+              setCount(count + 1);
+            }}
+          >
             <svg
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -59,7 +71,9 @@ const ShopItem = () => {
             </svg>
           </button>
         </div>
-        <button onSubmit={handleSubmit}>submit</button>
+        <button className={s.addToCart} onSubmit={handleSubmit}>
+          Add to Cart
+        </button>
       </form>
     </li>
   );
