@@ -10,6 +10,7 @@ import bacon from './bacon.avif'
 import olives from "./olives.avif";
 import olivesHome from "./olivesHome.png";
 import cheddar from "./cheddar.avif";
+import minus from './minus.svg'
 import plus from "./plus.svg";
 import parmesan from "./parmesan.avif";
 import ricotta from './Ricotta.avif'
@@ -34,6 +35,7 @@ export default {
   olivesHome,
   cheddar,
   plus,
+  minus,
   parmesan,
   ricotta,
   danablu,

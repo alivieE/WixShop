@@ -1,14 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import s from "./Header.module.css";
 import images from "../../assets/index";
 import { Link } from "react-router-dom";
+
 const Header = () => {
   const [isOpenMenu, setisOpenMenu] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
+
+  const updateCartCount = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    setCartCount(totalItems);
+  };
+
+  useEffect(() => {
+    updateCartCount();
+    window.addEventListener("cartUpdated", updateCartCount);
+
+    return () => {
+      window.removeEventListener("cartUpdated", updateCartCount);
+    };
+  }, []);
   return (
     <header className={s.header}>
       <div className={s.bagAndCount}>
         <img className={s.bag} src={images.bag} alt="bag" />
-        <p className={s.text}>12</p>
+        <p className={s.text}>{cartCount}</p>
       </div>
 
       <div className={s.menu}>

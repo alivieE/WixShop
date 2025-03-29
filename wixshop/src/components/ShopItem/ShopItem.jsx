@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./ShopItem.module.css";
 import images from "../../assets/index";
 import productsData from "../../data/products";
+
 const ShopItem = ({ id }) => {
   const [count, setCount] = useState(1);
 
@@ -9,13 +10,26 @@ const ShopItem = ({ id }) => {
     setCount(Number(event.target.value));
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleAddToCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingItem = cart.find((item) => item.id === id);
+
+    if (existingItem) {
+      const updatedCart = cart.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + count } : item
+      );
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    } else {
+      const newCart = [...cart, { id, quantity: count }];
+      localStorage.setItem("cart", JSON.stringify(newCart));
+    }
+
+    window.dispatchEvent(new Event("cartUpdated"));
+    setCount(1);
   }
-  const currentProduct = productsData.find((product) => {
-    return product.id === id;
-  });
-  console.log(currentProduct);
+
+  const currentProduct = productsData.find((product) => product.id === id);
+
   return (
     <li>
       <form action="submit">
@@ -44,57 +58,28 @@ const ShopItem = ({ id }) => {
         <div className={s.inputBox}>
           <button
             type="button"
-            onClick={() => {
-              if (count - 1 === 0) {
-                return;
-              }
-              setCount(count - 1);
-            }}
+            onClick={() => setCount((prev) => Math.max(prev - 1, 1))}
             className={s.buttonMinus}
           >
-            <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              width="24"
-              height="24"
-              class="sVHsHKp"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M20,12 L20,13 L5,13 L5,12 L20,12 Z"
-              ></path>
-            </svg>
+            <img src={images.minus} />-
           </button>
           <input
             type="number"
             className={s.input}
             value={count}
             onChange={handleCountChange}
-            min={"1"}
-            max={"10"}
+            min="1"
+            max="10"
           />
           <button
             type="button"
             className={s.buttonPlus}
-            onClick={() => {
-              setCount(count + 1);
-            }}
+            onClick={() => setCount((prev) => Math.min(prev + 1, 10))}
           >
-            <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              width="24"
-              height="24"
-              class="sVHsHKp"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M13,5 L13,12 L20,12 L20,13 L13,13 L13,20 L12,20 L11.999,13 L5,13 L5,12 L12,12 L12,5 L13,5 Z"
-              ></path>
-            </svg>
+            <img src={images.plus} />+
           </button>
         </div>
-        <button className={s.addToCart} onSubmit={handleSubmit}>
+        <button type="button" className={s.addToCart} onClick={handleAddToCart}>
           Add to Cart
         </button>
       </form>
