@@ -3,36 +3,39 @@ import s from "./ShopItem.module.css";
 import images from "../../assets/index";
 import productsData from "../../data/products";
 
-const ShopItem = ({ id }) => {
+const ShopItem = ({ id, productList, setProductList }) => {
   const [count, setCount] = useState(1);
 
   function handleCountChange(event) {
     setCount(Number(event.target.value));
   }
 
-  function handleAddToCart() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingItem = cart.find((item) => item.id === id);
-
-    if (existingItem) {
-      const updatedCart = cart.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + count } : item
-      );
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-    } else {
-      const newCart = [...cart, { id, quantity: count }];
-      localStorage.setItem("cart", JSON.stringify(newCart));
-    }
-
-    window.dispatchEvent(new Event("cartUpdated"));
-    setCount(1);
+  function handleAddToCart(e) {
+    e.preventDefault();
+    setProductList((prev) => {
+      if (
+        prev.some((product) => {
+          return product.id === id;
+        })
+      ) {
+        const updatedCart = prev.map((item) =>
+          item.id === id
+            ? { ...item, quantity: Number(item.quantity + count) }
+            : item
+        );
+        return updatedCart;
+      } else {
+        const newCart = [...prev, { id, quantity: Number(count) }];
+        return newCart;
+      }
+    });
   }
 
   const currentProduct = productsData.find((product) => product.id === id);
 
   return (
     <li>
-      <form action="submit">
+      <form action="submit" onSubmit={handleAddToCart}>
         <div className={s.wrapImg}>
           {currentProduct.saleAmount > 0 && <p className={s.notify}>SALE</p>}
           {currentProduct.isNew > 0 && <p className={s.notify}>NEW</p>}
@@ -101,7 +104,7 @@ const ShopItem = ({ id }) => {
             </svg>
           </button>
         </div>
-        <button type="button" className={s.addToCart} onClick={handleAddToCart}>
+        <button type="submit" className={s.addToCart}>
           Add to Cart
         </button>
       </form>

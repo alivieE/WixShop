@@ -4,34 +4,20 @@ import images from "../../assets/index";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
 
-const Header = () => {
+const Header = ({ productList, setOpenCart, openCart }) => {
   const [isOpenMenu, setisOpenMenu] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
-  const [openCart, setOpenCart] = useState(false);
 
-  const updateCartCount = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    setCartCount(totalItems);
-  };
-
-  useEffect(() => {
-    updateCartCount();
-    window.addEventListener("cartUpdated", updateCartCount);
-
-    return () => {
-      window.removeEventListener("cartUpdated", updateCartCount);
-    };
-  }, []);
   return (
     <header className={s.header}>
-      <Cart
-        className={s.bagAndCount}
+      <div
         onClick={() => {
           setOpenCart(!openCart);
         }}
-      ></Cart>
-
+        className={s.bagWrap}
+      >
+        <img className={s.bag} src={images.bag} alt="bag" />
+        <p className={s.text}>{productList.length}</p>
+      </div>
       <div className={s.menu}>
         <input
           onClick={() => {
@@ -39,7 +25,7 @@ const Header = () => {
           }}
           type="checkbox"
           id="burgerCheckbox"
-          class={s.burgerCheckbox}
+          className={s.burgerCheckbox}
           checked={isOpenMenu}
         />
         <label for="burgerCheckbox" class={s.burger}></label>

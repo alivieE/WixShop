@@ -3,7 +3,7 @@ import s from "./Provision.module.css";
 import GoogtoEat from "../../components/GoodtoEat/GoogtoEat";
 import ShopItem from "../../components/ShopItem/ShopItem";
 
-const Provision = () => {
+const Provision = ({ productList, setProductList }) => {
   return (
     <div className={s.Cheeses}>
       <GoogtoEat text={"SHOP WITH US"}></GoogtoEat>
@@ -16,10 +16,26 @@ const Provision = () => {
         </p>
       </div>
       <ul>
-        <ShopItem id={"macarons"} />
-        <ShopItem id={"cakes"} />
-        <ShopItem id={"olives"} />
-        <ShopItem id={"bovarSausages"} />
+        <ShopItem
+          productList={productList}
+          setProductList={setProductList}
+          id={"macarons"}
+        />
+        <ShopItem
+          productList={productList}
+          setProductList={setProductList}
+          id={"cakes"}
+        />
+        <ShopItem
+          productList={productList}
+          setProductList={setProductList}
+          id={"olives"}
+        />
+        <ShopItem
+          productList={productList}
+          setProductList={setProductList}
+          id={"bovarSausages"}
+        />
       </ul>
     </div>
   );

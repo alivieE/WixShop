@@ -3,7 +3,7 @@ import s from "./Meats.module.css";
 import GoogtoEat from "../../components/GoodtoEat/GoogtoEat";
 import ShopItem from "../../components/ShopItem/ShopItem";
 
-const Meats = () => {
+const Meats = ({ productList, setProductList }) => {
   return (
     <div className={s.Cheeses}>
       <GoogtoEat text={"SHOP WITH US"}></GoogtoEat>
@@ -16,10 +16,26 @@ const Meats = () => {
         </p>
       </div>
       <ul>
-        <ShopItem id={"bovarSausages"} />
-        <ShopItem id={"bacon"} />
-        <ShopItem id={"salyami"} />
-        <ShopItem id={"bujenina"} />
+        <ShopItem
+          productList={productList}
+          setProductList={setProductList}
+          id={"bovarSausages"}
+        />
+        <ShopItem
+          productList={productList}
+          setProductList={setProductList}
+          id={"bacon"}
+        />
+        <ShopItem
+          productList={productList}
+          setProductList={setProductList}
+          id={"salyami"}
+        />
+        <ShopItem
+          productList={productList}
+          setProductList={setProductList}
+          id={"bujenina"}
+        />
       </ul>
     </div>
   );

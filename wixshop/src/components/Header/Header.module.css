@@ -1,7 +1,11 @@
 .menu {
   position: fixed;
+
   right: 30px;
-  top: 30px;
+  top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .burgerCheckbox {
@@ -106,6 +110,13 @@
   font-size: 17px;
   position: absolute;
   color: white;
-  left: 37px;
-  top: 45px;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bagWrap {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
 }
