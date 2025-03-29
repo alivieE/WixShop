@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import s from "./Cart.module.css";
 import images from "../../assets/index";
+import CartItem from "../CartItem/CartItem";
 
-const Cart = ({ openCart, setOpenCart }) => {
+const Cart = ({ openCart, setOpenCart, productList }) => {
   return (
     <div className={s.mainWrap}>
+      {}
       <div
         onClick={() => {
           setOpenCart(false);
@@ -24,6 +26,17 @@ const Cart = ({ openCart, setOpenCart }) => {
           ></path>
         </svg>
       </div>
+      <h2 className={s.text}>Cart </h2>
+      <div className={s.horizontalLine}></div>
+      <ul>
+        {productList.map((product) => {
+          return (
+            <li>
+              <CartItem product={product} />
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

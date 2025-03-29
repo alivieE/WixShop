@@ -25,7 +25,13 @@ function App() {
           openCart={openCart}
           productList={productList}
         ></Header>
-        {openCart && <Cart setOpenCart={setOpenCart} openCart={openCart} />}
+        {openCart && (
+          <Cart
+            setOpenCart={setOpenCart}
+            openCart={openCart}
+            productList={productList}
+          />
+        )}
         <Routes>
           <Route path="/" element={<Cabinet />} />
           <Route path="/about" element={<About />} />
