@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import s from "./Header.module.css";
 import images from "../../assets/index";
 import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
 
 const Header = () => {
   const [isOpenMenu, setisOpenMenu] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  const [openCart, setOpenCart] = useState(false);
 
   const updateCartCount = () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -23,10 +25,12 @@ const Header = () => {
   }, []);
   return (
     <header className={s.header}>
-      <div className={s.bagAndCount}>
-        <img className={s.bag} src={images.bag} alt="bag" />
-        <p className={s.text}>{cartCount}</p>
-      </div>
+      <Cart
+        className={s.bagAndCount}
+        onClick={() => {
+          setOpenCart(!openCart);
+        }}
+      ></Cart>
 
       <div className={s.menu}>
         <input

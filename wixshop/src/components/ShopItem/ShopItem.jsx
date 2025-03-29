@@ -61,7 +61,18 @@ const ShopItem = ({ id }) => {
             onClick={() => setCount((prev) => Math.max(prev - 1, 1))}
             className={s.buttonMinus}
           >
-            <img src={images.minus} />-
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="24"
+              height="24"
+              class="sVHsHKp"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M20,12 L20,13 L5,13 L5,12 L20,12 Z"
+              ></path>
+            </svg>
           </button>
           <input
             type="number"
@@ -76,7 +87,18 @@ const ShopItem = ({ id }) => {
             className={s.buttonPlus}
             onClick={() => setCount((prev) => Math.min(prev + 1, 10))}
           >
-            <img src={images.plus} />+
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="24"
+              height="24"
+              class="sVHsHKp"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M13,5 L13,12 L20,12 L20,13 L13,13 L13,20 L12,20 L11.999,13 L5,13 L5,12 L12,12 L12,5 L13,5 Z"
+              ></path>
+            </svg>
           </button>
         </div>
         <button type="button" className={s.addToCart} onClick={handleAddToCart}>
