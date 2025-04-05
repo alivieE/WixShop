@@ -23,5 +23,57 @@
 
 .text {
   text-align: left;
-  padding: 20px;
+  padding: 20px 20px 20px 0;
+}
+
+.listWrap {
+  overflow-y: scroll;
+}
+
+.list {
+  width: 300px;
+}
+
+.btnCheck {
+  background-color: rgb(226, 112, 90);
+  color: white;
+  width: 100%;
+  padding: 15px 16px;
+  font-size: 16px;
+}
+
+.btnViewCart {
+  background-color: white;
+  width: 100%;
+  padding: 15px 16px;
+  color: rgb(226, 112, 90);
+  margin: 10px 0 10px 0;
+  border: 1px solid rgb(226, 112, 90);
+}
+
+.subWrap {
+}
+
+.subtotal {
+  text-align: left;
+  padding: 20px 20px 20px 0;
+}
+
+.subPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description {
+  display: flex;
+  text-align: left;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.lock {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
 }
