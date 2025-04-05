@@ -3,7 +3,7 @@ import s from "./Cart.module.css";
 import images from "../../assets/index";
 import CartItem from "../CartItem/CartItem";
 
-const Cart = ({ openCart, setOpenCart, productList }) => {
+const Cart = ({ openCart, setOpenCart, productList, setProductList }) => {
   return (
     <div className={s.mainWrap}>
       {}
@@ -33,7 +33,11 @@ const Cart = ({ openCart, setOpenCart, productList }) => {
           {productList.map((product) => {
             return (
               <li>
-                <CartItem product={product} />
+                <CartItem
+                  product={product}
+                  productList={productList}
+                  setProductList={setProductList}
+                />
               </li>
             );
           })}

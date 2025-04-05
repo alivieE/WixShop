@@ -83,7 +83,7 @@ const ShopItem = ({ id, productList, setProductList }) => {
             value={count}
             onChange={handleCountChange}
             min="1"
-            max="10"
+            max="50"
           />
           <button
             type="button"

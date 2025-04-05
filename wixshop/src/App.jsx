@@ -30,6 +30,7 @@ function App() {
             setOpenCart={setOpenCart}
             openCart={openCart}
             productList={productList}
+            setProductList={setProductList}
           />
         )}
         <Routes>
