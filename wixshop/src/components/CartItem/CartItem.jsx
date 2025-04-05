@@ -18,6 +18,26 @@ const CartItem = ({ product, productList, setProductList }) => {
 
   // const totalPrice = dataProduct.price;
 
+  function handleMinus() {
+    if (count === 0) {
+      return;
+    }
+    setCount(count - 1);
+  }
+  function handlePlus() {
+    setCount(count + 1);
+  }
+
+  useEffect(() => {
+    setProductList((prev) => {
+      return prev.map((someProduct) => {
+        if (someProduct.id === product.id) {
+          return { id: product.id, quantity: count };
+        }
+        return someProduct;
+      });
+    });
+  }, [count]);
   return (
     <>
       <div>
@@ -39,11 +59,7 @@ const CartItem = ({ product, productList, setProductList }) => {
           <p>${currentProduct.price}</p>
         </div>
         <div>
-          <button
-            type="button"
-            onClick={() => setCount((prev) => Math.max(prev - 1, 1))}
-            className={s.buttonMinus}
-          >
+          <button type="button" onClick={handleMinus} className={s.buttonMinus}>
             <svg
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -65,11 +81,7 @@ const CartItem = ({ product, productList, setProductList }) => {
             min="1"
             max="50"
           />
-          <button
-            type="button"
-            className={s.buttonPlus}
-            onClick={() => setCount((prev) => Math.min(prev + 1, 10))}
-          >
+          <button type="button" className={s.buttonPlus} onClick={handlePlus}>
             <svg
               viewBox="0 0 24 24"
               fill="currentColor"
