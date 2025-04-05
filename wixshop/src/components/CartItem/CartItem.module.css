@@ -2,3 +2,47 @@
   width: 75px;
   height: auto;
 }
+
+.cartWrap {
+  overflow-y: scroll;
+}
+
+.secondWrap {
+}
+.inptWrap {
+}
+
+.inputBox {
+  position: relative;
+}
+
+.input {
+  display: block;
+  border: none;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  padding: 10px;
+  width: 94%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.buttonMinus {
+  background: none;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+}
+
+.buttonPlus {
+  background: none;
+  position: absolute;
+  top: 7px;
+  right: -5px;
+}
+
+.productNameAndDelete {
+  display: flex;
+  justify-content: space-between;
+}

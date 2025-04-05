@@ -32,7 +32,7 @@ const Cart = ({ openCart, setOpenCart, productList, setProductList }) => {
         <ul className={s.list}>
           {productList.map((product) => {
             return (
-              <li>
+              <li className={s.cartItem}>
                 <CartItem
                   product={product}
                   productList={productList}
@@ -59,7 +59,7 @@ const Cart = ({ openCart, setOpenCart, productList, setProductList }) => {
           View Cart
         </button>
         <div className={s.lock}>
-          <p className={s.lock}>
+          <button className={s.lock}>
             <svg
               width="11"
               height="14"
@@ -77,7 +77,7 @@ const Cart = ({ openCart, setOpenCart, productList, setProductList }) => {
               </g>
             </svg>
             Secure Checkout
-          </p>
+          </button>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import s from "./CartItem.module.css";
 import images from "../../assets/index";
 import productsData from "../../data/products";
+import products from "../../data/products";
 
 const CartItem = ({ product, productList, setProductList }) => {
   const [count, setCount] = useState(product.quantity);
@@ -38,15 +39,23 @@ const CartItem = ({ product, productList, setProductList }) => {
       });
     });
   }, [count]);
+
+  function deleteProdact() {
+    setProductList((prev) => {
+      return prev.filter((prevProduct) => {
+        return product.id !== prevProduct.id;
+      });
+    });
+  }
   return (
     <>
-      <div>
+      <div className={s.firstWrap}>
         <img className={s.productImg} src={images[currentProduct.id]} />
       </div>
-      <div>
-        <div>
+      <div className={s.secondWrap}>
+        <div className={s.productNameAndDelete}>
           <p>{currentProduct.name}</p>
-          <div>
+          <div onClick={deleteProdact}>
             <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
               <path
                 fill-rule="evenodd"
@@ -58,7 +67,7 @@ const CartItem = ({ product, productList, setProductList }) => {
         <div>
           <p>${currentProduct.price}</p>
         </div>
-        <div>
+        <div className={s.inputBox}>
           <button type="button" onClick={handleMinus} className={s.buttonMinus}>
             <svg
               viewBox="0 0 24 24"

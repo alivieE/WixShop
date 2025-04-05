@@ -77,3 +77,8 @@
   gap: 5px;
   justify-content: center;
 }
+
+.cartItem {
+  display: flex;
+  justify-content: flex-start;
+}
