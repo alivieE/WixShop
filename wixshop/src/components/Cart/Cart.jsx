@@ -12,16 +12,14 @@ const Cart = ({
   productList,
   setProductList,
 }) => {
-  const totalPrice = productList.reduce((accumulator, sumProducts) => {
+  const totalPrice = productList.reduce((acc, sumProducts) => {
     const currentProduct = productsData.find(
       (productsData) => sumProducts.id === productsData.id
     );
-    const total = currentProduct.price * sumProducts.quantity;
-    console.log(currentProduct);
-    console.log(sumProducts);
-    console.log(total);
-    return 1;
-  });
+
+    return acc + currentProduct.price * sumProducts.quantity;
+  }, 0);
+
   return (
     <div className={s.mainWrap}>
       {}
@@ -64,7 +62,7 @@ const Cart = ({
       <div className={s.subWrap}>
         <div className={s.subPrice}>
           <h2 className={s.subtotal}>Subtotal</h2>
-          <h2 className={s.price}>$74.92{totalPrice}</h2>
+          <h2 className={s.price}>${totalPrice}</h2>
         </div>
         <div className={s.description}>
           <p>Taxes and shopping are caulated at checkout</p>
