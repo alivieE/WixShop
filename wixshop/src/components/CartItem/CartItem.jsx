@@ -64,47 +64,57 @@ const CartItem = ({ product, productList, setProductList }) => {
             </svg>
           </div>
         </div>
-        <div>
+        <div className={s.productPrice}>
           <p>${currentProduct.price}</p>
         </div>
-        <div className={s.inputBox}>
-          <button type="button" onClick={handleMinus} className={s.buttonMinus}>
-            <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              width="24"
-              height="24"
-              class="sVHsHKp"
+        <div className={s.inputWrap}>
+          <div className={s.inputBox}>
+            <button
+              type="button"
+              onClick={handleMinus}
+              className={s.buttonMinus}
             >
-              <path
-                fill-rule="evenodd"
-                d="M20,12 L20,13 L5,13 L5,12 L20,12 Z"
-              ></path>
-            </svg>
-          </button>
-          <input
-            type="number"
-            className={s.input}
-            value={count}
-            onChange={handleCountChange}
-            min="1"
-            max="50"
-          />
-          <button type="button" className={s.buttonPlus} onClick={handlePlus}>
-            <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              width="24"
-              height="24"
-              class="sVHsHKp"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M13,5 L13,12 L20,12 L20,13 L13,13 L13,20 L12,20 L11.999,13 L5,13 L5,12 L12,12 L12,5 L13,5 Z"
-              ></path>
-            </svg>
-          </button>
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="24"
+                height="24"
+                class="sVHsHKp"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M20,12 L20,13 L5,13 L5,12 L20,12 Z"
+                ></path>
+              </svg>
+            </button>
+            <input
+              type="number"
+              className={s.input}
+              value={count}
+              onChange={handleCountChange}
+              min="1"
+              max="50"
+            />
+            <button type="button" className={s.buttonPlus} onClick={handlePlus}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="24"
+                height="24"
+                class="sVHsHKp"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M13,5 L13,12 L20,12 L20,13 L13,13 L13,20 L12,20 L11.999,13 L5,13 L5,12 L12,12 L12,5 L13,5 Z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div className={s.totalProductPrice}>
+            <p>{currentProduct.price * product.quantity}</p>
+          </div>
         </div>
+        <div className={s.horizontalLine}></div>
       </div>
     </>
   );

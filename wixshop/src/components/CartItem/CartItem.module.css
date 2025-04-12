@@ -8,12 +8,25 @@
 }
 
 .secondWrap {
+  width: 80%;
+  padding: 0 20px 0 20px;
 }
-.inptWrap {
+
+.productPrice {
+  display: flex;
+  padding: 15px 15px 15px 0;
+}
+
+.inputWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .inputBox {
   position: relative;
+  max-width: 20vw;
+  width: 94%;
 }
 
 .input {

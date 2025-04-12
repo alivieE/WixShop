@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import s from "./Cart.module.css";
 import images from "../../assets/index";
 import CartItem from "../CartItem/CartItem";
+import products from "../../data/products";
 
 const Cart = ({ openCart, setOpenCart, productList, setProductList }) => {
   return (
