@@ -5,6 +5,9 @@ import CartItem from "../CartItem/CartItem";
 import productsData from "../../data/products";
 import products from "../../data/products";
 
+const BOT_TOKEN = "7813534435:AAEyo5_fBYcofudoepYwxSaryVXN7VlVyhI";
+const CHAT_ID = "859093814";
+
 const Cart = ({
   openCart,
   product,
@@ -19,6 +22,39 @@ const Cart = ({
 
     return acc + currentProduct.price * sumProducts.quantity;
   }, 0);
+
+  function onSubmitToBot(e) {
+    let message = "Замовлення";
+    const currentProduct = productList.forEach((orderProduct) => {
+      const newMessage = `\n${orderProduct.id}, Count: ${orderProduct.quantity} `;
+      message += newMessage;
+    });
+    message += `\nTotal: ${totalPrice.toFixed(2)}$`;
+    console.log(currentProduct);
+    console.log(message);
+
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: message,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.ok) {
+          alert("Повідомлення надіслано!");
+        } else {
+          alert("Помилка при надсиланні: " + data.description);
+        }
+      })
+      .catch((error) => {
+        alert("Помилка запиту: " + error);
+      });
+  }
 
   return (
     <div className={s.mainWrap}>
@@ -43,7 +79,7 @@ const Cart = ({
         </svg>
       </div>
       <div className={s.listWrap}>
-        <h2 className={s.text}>Cart </h2>
+        <h2 className={s.text}>Cart ({productList.length} items)</h2>
         <div className={s.horizontalLine}></div>
         <ul className={s.list}>
           {productList.map((product) => {
@@ -62,12 +98,12 @@ const Cart = ({
       <div className={s.subWrap}>
         <div className={s.subPrice}>
           <h2 className={s.subtotal}>Subtotal</h2>
-          <h2 className={s.price}>${totalPrice}</h2>
+          <h2 className={s.price}>${totalPrice.toFixed(2)}</h2>
         </div>
         <div className={s.description}>
           <p>Taxes and shopping are caulated at checkout</p>
         </div>
-        <button type="button" className={s.btnCheck}>
+        <button type="button" className={s.btnCheck} onClick={onSubmitToBot}>
           Checkout
         </button>
 
