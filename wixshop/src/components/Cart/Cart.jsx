@@ -12,10 +12,16 @@ const Cart = ({
   productList,
   setProductList,
 }) => {
-  const currentProduct = productsData.find(
-    (productList) => productList.id === productList.id
-  );
-  const totalPrice = productList.price;
+  const totalPrice = productList.reduce((accumulator, sumProducts) => {
+    const currentProduct = productsData.find(
+      (productsData) => sumProducts.id === productsData.id
+    );
+    const total = currentProduct.price * sumProducts.quantity;
+    console.log(currentProduct);
+    console.log(sumProducts);
+    console.log(total);
+    return 1;
+  });
   return (
     <div className={s.mainWrap}>
       {}
