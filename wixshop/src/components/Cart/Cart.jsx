@@ -2,9 +2,20 @@ import React, { useState, useEffect } from "react";
 import s from "./Cart.module.css";
 import images from "../../assets/index";
 import CartItem from "../CartItem/CartItem";
+import productsData from "../../data/products";
 import products from "../../data/products";
 
-const Cart = ({ openCart, setOpenCart, productList, setProductList }) => {
+const Cart = ({
+  openCart,
+  product,
+  setOpenCart,
+  productList,
+  setProductList,
+}) => {
+  const currentProduct = productsData.find(
+    (productList) => productList.id === productList.id
+  );
+  const totalPrice = productList.price;
   return (
     <div className={s.mainWrap}>
       {}
@@ -47,7 +58,7 @@ const Cart = ({ openCart, setOpenCart, productList, setProductList }) => {
       <div className={s.subWrap}>
         <div className={s.subPrice}>
           <h2 className={s.subtotal}>Subtotal</h2>
-          <h2 className={s.price}>$74.92</h2>
+          <h2 className={s.price}>$74.92{totalPrice}</h2>
         </div>
         <div className={s.description}>
           <p>Taxes and shopping are caulated at checkout</p>
