@@ -73,6 +73,14 @@ const Header = ({ productList, setOpenCart, openCart }) => {
               >
                 <Link to="/provision">Provision</Link>
               </li>
+              <li
+                class={s.menuItem}
+                onClick={() => {
+                  setisOpenMenu(!isOpenMenu);
+                }}
+              >
+                <Link to="/findUs">Find Us</Link>
+              </li>
             </ul>
           </nav>
         </div>

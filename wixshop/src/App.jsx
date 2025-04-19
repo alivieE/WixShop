@@ -8,6 +8,7 @@ import Cheeses from "./pages/Cheeses/Cheeses";
 import Meats from "./pages/Meats/Meats";
 import Provision from "./pages/Provision/Provision";
 import Cart from "./components/Cart/Cart";
+import FindUs from "./pages/FindUs/FindUs";
 function App() {
   const [productList, setProductList] = useState(() => {
     const isLS = JSON.parse(localStorage.getItem("cart"));
@@ -58,6 +59,15 @@ function App() {
             path="/provision"
             element={
               <Provision
+                productList={productList}
+                setProductList={setProductList}
+              />
+            }
+          />
+          <Route
+            path="/findUs"
+            element={
+              <FindUs
                 productList={productList}
                 setProductList={setProductList}
               />

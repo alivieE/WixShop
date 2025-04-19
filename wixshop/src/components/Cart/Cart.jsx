@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import s from "./Cart.module.css";
-
 import CartItem from "../CartItem/CartItem";
 import productsData from "../../data/products";
-
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 const BOT_TOKEN = "7813534435:AAEyo5_fBYcofudoepYwxSaryVXN7VlVyhI";
 const CHAT_ID = "859093814";
@@ -49,12 +47,14 @@ const Cart = ({
           Notify.success("Повідомлення надіслано!", {
             timeout: 3000,
           });
+          setProductList([]);
+          setOpenCart(false);
         } else {
-          alert("Помилка при надсиланні: " + data.description);
+          Notify.failure("Помилка при надсиланні: " + data.description);
         }
       })
       .catch((error) => {
-        alert("Помилка запиту: " + error);
+        Notify.failure("Помилка запиту: " + error);
       });
   }
 
