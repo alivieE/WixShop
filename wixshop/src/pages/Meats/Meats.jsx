@@ -2,11 +2,12 @@ import React from "react";
 import s from "./Meats.module.css";
 import GoogtoEat from "../../components/GoodtoEat/GoogtoEat";
 import ShopItem from "../../components/ShopItem/ShopItem";
-
+import Palitr from "./palitra";
 const Meats = ({ productList, setProductList }) => {
   return (
     <div className={s.Cheeses}>
-      <GoogtoEat text={"SHOP WITH US"}></GoogtoEat>
+      <Palitr />
+      {/* <GoogtoEat text={"SHOP WITH US"}></GoogtoEat>
       <p className={s.title}>Meats</p>
       <div className={s.description}>
         <p className={s.descriptionWrap}>
@@ -36,7 +37,7 @@ const Meats = ({ productList, setProductList }) => {
           setProductList={setProductList}
           id={"bujenina"}
         />
-      </ul>
+      </ul> */}
     </div>
   );
 };

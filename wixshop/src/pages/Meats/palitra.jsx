@@ -1,0 +1,38 @@
+import React from "react";
+import s from "./palitra.module.css";
+const Palitra = () => {
+  return (
+    <div>
+      <div className={s.palitra}>
+        <div
+          style={{ backgroundColor: "red" }}
+          data-color="red"
+          className={s.color}
+        ></div>
+        <div
+          style={{ backgroundColor: "orange" }}
+          data-color="orange"
+          className={s.color}
+        ></div>
+        <div
+          style={{ backgroundColor: "green" }}
+          data-color="green"
+          className={s.color}
+        ></div>
+        <div
+          style={{ backgroundColor: "yellow" }}
+          data-color="yellow"
+          className={s.color}
+        ></div>
+        <div
+          style={{ backgroundColor: "pink" }}
+          data-color="pink"
+          className={s.color}
+        ></div>
+      </div>
+      <div className={s.result}></div>
+    </div>
+  );
+};
+
+export default Palitra;
