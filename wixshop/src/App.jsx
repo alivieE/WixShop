@@ -1,15 +1,10 @@
 import "./App.css";
 import { lazy, Suspense } from "react";
 import { useState, useEffect } from "react";
-import Cabinet from "./pages/Cabinet/Cabinet";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
 import Header from "./components/Header/Header";
-import Cheeses from "./pages/Cheeses/Cheeses";
-import Meats from "./pages/Meats/Meats";
-import Provision from "./pages/Provision/Provision";
 import Cart from "./components/Cart/Cart";
-import FindUs from "./pages/FindUs/FindUs";
+
 function App() {
   const [productList, setProductList] = useState(() => {
     const isLS = JSON.parse(localStorage.getItem("cart"));
@@ -20,6 +15,11 @@ function App() {
     localStorage.setItem("cart", JSON.stringify(productList));
   }, [productList]);
   const About = lazy(() => import("./pages/About/About"));
+  const Cabinet = lazy(() => import("./pages/Cabinet/Cabinet"));
+  const Cheeses = lazy(() => import("./pages/Cheeses/Cheeses"));
+  const Meats = lazy(() => import("./pages/Meats/Meats"));
+  const Provision = lazy(() => import("./pages/Provision/Provision"));
+  const FindUs = lazy(() => import("./pages/FindUs/FindUs"));
   return (
     <BrowserRouter>
       <div className="App">
