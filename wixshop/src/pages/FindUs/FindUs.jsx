@@ -83,7 +83,7 @@ const FindUs = () => {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.9149638155327!2d30.59868437711967!3d50.44268457159082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf8a4d81dddb%3A0x7b94cc0bae978d3c!2z0YPQuy4g0K3QvdGC0YPQt9C40LDRgdGC0L7Qsiwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1745064995857!5m2!1sru!2sua"
             width="100%"
             height="450"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
@@ -101,7 +101,6 @@ const FindUs = () => {
           <p>Email: info@mysite.com</p>
           <p>Phone: 123-456-7890</p>
         </div>
-        <form type="submit" onSubmit={onSubmitToBot} className={s.form}>
         <form onSubmit={onSubmitToBot} className={s.form}>
           <div className={s.inputWrap}>
             <label>First name*</label>
