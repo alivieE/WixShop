@@ -3,6 +3,7 @@ import s from "./CartItem.module.css";
 import images from "../../assets/index";
 import productsData from "../../data/products";
 import products from "../../data/products";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 const CartItem = ({ product, productList, setProductList }) => {
   const [count, setCount] = useState(product.quantity);
@@ -45,6 +46,9 @@ const CartItem = ({ product, productList, setProductList }) => {
       return prev.filter((prevProduct) => {
         return product.id !== prevProduct.id;
       });
+    });
+    Notify.info("Товар видалено", {
+      timeout: 3000,
     });
   }
   return (

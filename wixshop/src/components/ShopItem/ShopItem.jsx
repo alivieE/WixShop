@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./ShopItem.module.css";
 import images from "../../assets/index";
 import productsData from "../../data/products";
+import { Notify } from "notiflix";
 
 const ShopItem = ({ id, productList, setProductList }) => {
   const [count, setCount] = useState(1);
@@ -28,6 +29,9 @@ const ShopItem = ({ id, productList, setProductList }) => {
         const newCart = [...prev, { id, quantity: Number(count) }];
         return newCart;
       }
+    });
+    Notify.success("Товар додано кошик", {
+      timeout: 3000,
     });
   }
 

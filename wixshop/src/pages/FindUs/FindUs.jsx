@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import GoogtoEat from "../../components/GoodtoEat/GoogtoEat";
 import s from "./FindUs.module.css";
 
@@ -7,12 +7,34 @@ const BOT_TOKEN = "7813534435:AAEyo5_fBYcofudoepYwxSaryVXN7VlVyhI";
 const CHAT_ID = "859093814";
 
 const FindUs = () => {
+  // Create state for form inputs
+  const [formData, setFormData] = useState({
+    first: "",
+    last: "",
+    email: "",
+    message: "",
+  });
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   function onSubmitToBot(e) {
     e.preventDefault();
-    let message = "Дані користувача";
-    // const newMessage = `\n${orderProduct.id}, Count: ${orderProduct.quantity} `;
-    //   message += newMessage;
-    console.log(e.target.elements["last"].value);
+
+    // Create the message with all form data
+    let message = "Дані користувача:\n";
+    message += `Ім'я: ${formData.first}\n`;
+    message += `Прізвище: ${formData.last}\n`;
+    message += `Email: ${formData.email}\n`;
+    message += `Повідомлення: ${formData.message}`;
+
+    console.log("Sending message:", message);
 
     fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: "POST",
@@ -29,6 +51,13 @@ const FindUs = () => {
         if (data.ok) {
           Notify.success("Повідомлення надіслано!", {
             timeout: 3000,
+          });
+          // Reset form after successful submission
+          setFormData({
+            first: "",
+            last: "",
+            email: "",
+            message: "",
           });
         } else {
           Notify.failure("Помилка при надсиланні: " + data.description);
@@ -56,7 +85,7 @@ const FindUs = () => {
             height="450"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
         <div className={s.aboutUs}>
@@ -73,24 +102,47 @@ const FindUs = () => {
           <p>Phone: 123-456-7890</p>
         </div>
         <form type="submit" onSubmit={onSubmitToBot} className={s.form}>
+        <form onSubmit={onSubmitToBot} className={s.form}>
           <div className={s.inputWrap}>
             <label>First name*</label>
-            <input name="first" required type="text" className={s.input} />
+            <input
+              name="first"
+              value={formData.first}
+              onChange={handleInputChange}
+              required
+              type="text"
+              className={s.input}
+            />
           </div>
           <div className={s.inputWrap}>
             <label>Last name*</label>
-            <input name="last" required type="text" className={s.input} />
+            <input
+              name="last"
+              value={formData.last}
+              onChange={handleInputChange}
+              required
+              type="text"
+              className={s.input}
+            />
           </div>
           <div className={s.inputWrap}>
             <label>Email*</label>
-            <input name="email" required type="email" className={s.input} />
+            <input
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+              type="email"
+              className={s.input}
+            />
           </div>
           <div className={s.inputWrapMessage}>
             <label>Message*</label>
             <textarea
               name="message"
+              value={formData.message}
+              onChange={handleInputChange}
               required
-              type="text"
               rows={7}
               className={s.inputMessage}
             />
