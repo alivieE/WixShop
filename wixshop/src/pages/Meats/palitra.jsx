@@ -1,6 +1,8 @@
 import React from "react";
+import { useState } from "react";
 import s from "./palitra.module.css";
 const Palitra = () => {
+  const [currentColor, setcurrentColor] = useState("red");
   return (
     <div>
       <div className={s.palitra}>
@@ -30,7 +32,7 @@ const Palitra = () => {
           className={s.color}
         ></div>
       </div>
-      <div className={s.result}></div>
+      <div style={{ backgroundColor: currentColor }} className={s.result}></div>
     </div>
   );
 };
